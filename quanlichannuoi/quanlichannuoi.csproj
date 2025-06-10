@@ -1,0 +1,998 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4797DCB0-E7E2-4E02-AC3B-86994E5C9896}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>quanlichannuoi</RootNamespace>
+    <AssemblyName>quanlichannuoi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EBCF1D6471EEE5960672FBD7E6255C03D372EF79</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>quanlichannuoi_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>quanlichannuoi.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport.Compat, Version=2025.1.14.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastReport.Compat.2025.1.14\lib\net462\FastReport.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.2957.106, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2957.106\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.2957.106, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2957.106\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2957.106, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.2957.106\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\addhuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\addhuyen.Designer.cs">
+      <DependentUpon>addhuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addquyhoach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\addquyhoach.Designer.cs">
+      <DependentUpon>addquyhoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addxa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\addxa.Designer.cs">
+      <DependentUpon>addxa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\bandocongtrinhnuocsach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\bandocongtrinhnuocsach.Designer.cs">
+      <DependentUpon>bandocongtrinhnuocsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Bandoquyhoach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Bandoquyhoach.Designer.cs">
+      <DependentUpon>Bandoquyhoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Baocao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Baocao.Designer.cs">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoBĐ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoBĐ.Designer.cs">
+      <DependentUpon>BaoCaoCTNuocSachTheoBĐ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoCS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoCS.Designer.cs">
+      <DependentUpon>BaoCaoCTNuocSachTheoCS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoCT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoCT.Designer.cs">
+      <DependentUpon>BaoCaoCTNuocSachTheoCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoTG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\BaoCaoCTNuocSachTheoTG.Designer.cs">
+      <DependentUpon>BaoCaoCTNuocSachTheoTG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Bdquyhoach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Bdquyhoach.Designer.cs">
+      <DependentUpon>Bdquyhoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Chinhsua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Chinhsua.Designer.cs">
+      <DependentUpon>Chinhsua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CongTrinhNuocSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\CongTrinhNuocSach.Designer.cs">
+      <DependentUpon>CongTrinhNuocSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\cosochebiensanphamchannuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\cosochebiensanphamchannuoi.Designer.cs">
+      <DependentUpon>cosochebiensanphamchannuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashbord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashbord.Designer.cs">
+      <DependentUpon>Dashbord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\dieukienchannuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\dieukienchannuoi.Designer.cs">
+      <DependentUpon>dieukienchannuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\giaychungnhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\giaychungnhan.Designer.cs">
+      <DependentUpon>giaychungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HienThiCongTrinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\HienThiCongTrinh.Designer.cs">
+      <DependentUpon>HienThiCongTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hienthicongtrinhcapnuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\hienthicongtrinhcapnuoc.Designer.cs">
+      <DependentUpon>hienthicongtrinhcapnuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hienthicosochebien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\hienthicosochebien.Designer.cs">
+      <DependentUpon>hienthicosochebien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hienthidieukien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\hienthidieukien.Designer.cs">
+      <DependentUpon>hienthidieukien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hienthigiaychungnhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Hienthigiaychungnhan.Designer.cs">
+      <DependentUpon>Hienthigiaychungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HienThiHuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\HienThiHuyen.Designer.cs">
+      <DependentUpon>HienThiHuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hienthiquanlicosochannuoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\hienthiquanlicosochannuoi.Designer.cs">
+      <DependentUpon>hienthiquanlicosochannuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlifile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlifile.Designer.cs">
+      <DependentUpon>Hienthiquanlifile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlinhole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlinhole.Designer.cs">
+      <DependentUpon>Hienthiquanlinhole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlivanban.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Hienthiquanlivanban.Designer.cs">
+      <DependentUpon>Hienthiquanlivanban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\hienthitochucchungnhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\hienthitochucchungnhan.Designer.cs">
+      <DependentUpon>hienthitochucchungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HienThiXa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\HienThiXa.Designer.cs">
+      <DependentUpon>HienThiXa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Lichsutruycap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Lichsutruycap.Designer.cs">
+      <DependentUpon>Lichsutruycap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Manual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Manual.Designer.cs">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\quanlicosochannuoi%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\quanlicosochannuoi%28guiduc%29.Designer.cs">
+      <DependentUpon>quanlicosochannuoi%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\quanlifile%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\quanlifile%28guiduc%29.Designer.cs">
+      <DependentUpon>quanlifile%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\quanlivanban%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\quanlivanban%28guiduc%29.Designer.cs">
+      <DependentUpon>quanlivanban%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\quanlyketquachannuoinhole%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\quanlyketquachannuoinhole%28guiduc%29.Designer.cs">
+      <DependentUpon>quanlyketquachannuoinhole%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\quanlynhole%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\quanlynhole%28guiduc%29.Designer.cs">
+      <DependentUpon>quanlynhole%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\showhuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\showhuyen.Designer.cs">
+      <DependentUpon>showhuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\showquyhoac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\showquyhoac.Designer.cs">
+      <DependentUpon>showquyhoac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShowXa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\ShowXa.Designer.cs">
+      <DependentUpon>ShowXa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\themcongtrinhcapnuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\themcongtrinhcapnuoc.Designer.cs">
+      <DependentUpon>themcongtrinhcapnuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThemHuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\ThemHuyen.Designer.cs">
+      <DependentUpon>ThemHuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Themquyhoach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Themquyhoach.Designer.cs">
+      <DependentUpon>Themquyhoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Themxa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Themxa.Designer.cs">
+      <DependentUpon>Themxa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\tochucchungnhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\tochucchungnhan.Designer.cs">
+      <DependentUpon>tochucchungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\tracuucosochannuoi%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\tracuucosochannuoi%28guiduc%29.Designer.cs">
+      <DependentUpon>tracuucosochannuoi%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Tracuuvanban%28guiduc%29.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Tracuuvanban%28guiduc%29.Designer.cs">
+      <DependentUpon>Tracuuvanban%28guiduc%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewUser.Designer.cs">
+      <DependentUpon>ViewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinhsuagiaychungnhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinhsuagiaychungnhan.Designer.cs">
+      <DependentUpon>chinhsuagiaychungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinhsuaquanlicosochannuoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinhsuaquanlicosochannuoi.Designer.cs">
+      <DependentUpon>chinhsuaquanlicosochannuoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinhsuaquyhoachadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinhsuaquyhoachadmin.Designer.cs">
+      <DependentUpon>chinhsuaquyhoachadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinhsuathongtinnuocsach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinhsuathongtinnuocsach.Designer.cs">
+      <DependentUpon>chinhsuathongtinnuocsach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinhsuatochucchungnhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinhsuatochucchungnhan.Designer.cs">
+      <DependentUpon>chinhsuatochucchungnhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chinsuadieukien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chinsuadieukien.Designer.cs">
+      <DependentUpon>chinsuadieukien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Class1.cs" />
+    <Compile Include="Doimk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doimk.Designer.cs">
+      <DependentUpon>Doimk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doimk2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doimk2.Designer.cs">
+      <DependentUpon>Doimk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doithongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doithongtin.Designer.cs">
+      <DependentUpon>Doithongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doithongtincoso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doithongtincoso.Designer.cs">
+      <DependentUpon>doithongtincoso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doithongtinhuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doithongtinhuyen.Designer.cs">
+      <DependentUpon>Doithongtinhuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nguoidung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nguoidung.Designer.cs">
+      <DependentUpon>nguoidung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaoTk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaoTk.Designer.cs">
+      <DependentUpon>TaoTk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreshWater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreshWater.Designer.cs">
+      <DependentUpon>FreshWater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreshWatermap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreshWatermap.Designer.cs">
+      <DependentUpon>FreshWatermap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmadmin.Designer.cs">
+      <DependentUpon>frmadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HuyenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HuyenForm.Designer.cs">
+      <DependentUpon>HuyenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReportForm.Designer.cs">
+      <DependentUpon>ManagerReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuFreshWaterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFreshWaterForm.Designer.cs">
+      <DependentUpon>MenuFreshWaterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuQLQHWater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQLQHWater.Designer.cs">
+      <DependentUpon>MenuQLQHWater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanliqhForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanliqhForm.Designer.cs">
+      <DependentUpon>QuanliqhForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNongThonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyNongThonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Quenmatkhau1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quenmatkhau1.Designer.cs">
+      <DependentUpon>Quenmatkhau1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quenmatkhau2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quenmatkhau2.Designer.cs">
+      <DependentUpon>Quenmatkhau2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoricAccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricAccess.Designer.cs">
+      <DependentUpon>HistoricAccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="themcongtrinhnuocsachtubando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themcongtrinhnuocsachtubando.Designer.cs">
+      <DependentUpon>themcongtrinhnuocsachtubando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagerForm.Designer.cs">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VillageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VillageForm.Designer.cs">
+      <DependentUpon>VillageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassWordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassWordForm.Designer.cs">
+      <DependentUpon>ForgotPassWordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistrictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistrictForm.Designer.cs">
+      <DependentUpon>DistrictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewInfor.Designer.cs">
+      <DependentUpon>NewInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InforManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InforManagerForm.Designer.cs">
+      <DependentUpon>InforManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassWordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassWordForm.Designer.cs">
+      <DependentUpon>ResetPassWordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Watermap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Watermap.Designer.cs">
+      <DependentUpon>Watermap.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\addhuyen.resx">
+      <DependentUpon>addhuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\addquyhoach.resx">
+      <DependentUpon>addquyhoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\addxa.resx">
+      <DependentUpon>addxa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\bandocongtrinhnuocsach.resx">
+      <DependentUpon>bandocongtrinhnuocsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Bandoquyhoach.resx">
+      <DependentUpon>Bandoquyhoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Baocao.resx">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BaoCaoCTNuocSachTheoBĐ.resx">
+      <DependentUpon>BaoCaoCTNuocSachTheoBĐ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BaoCaoCTNuocSachTheoCS.resx">
+      <DependentUpon>BaoCaoCTNuocSachTheoCS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BaoCaoCTNuocSachTheoCT.resx">
+      <DependentUpon>BaoCaoCTNuocSachTheoCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\BaoCaoCTNuocSachTheoTG.resx">
+      <DependentUpon>BaoCaoCTNuocSachTheoTG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Bdquyhoach.resx">
+      <DependentUpon>Bdquyhoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Chinhsua.resx">
+      <DependentUpon>Chinhsua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CongTrinhNuocSach.resx">
+      <DependentUpon>CongTrinhNuocSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\cosochebiensanphamchannuoi.resx">
+      <DependentUpon>cosochebiensanphamchannuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Dashbord.resx">
+      <DependentUpon>Dashbord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\dieukienchannuoi.resx">
+      <DependentUpon>dieukienchannuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\giaychungnhan.resx">
+      <DependentUpon>giaychungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\HienThiCongTrinh.resx">
+      <DependentUpon>HienThiCongTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\hienthicongtrinhcapnuoc.resx">
+      <DependentUpon>hienthicongtrinhcapnuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\hienthicosochebien.resx">
+      <DependentUpon>hienthicosochebien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\hienthidieukien.resx">
+      <DependentUpon>hienthidieukien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Hienthigiaychungnhan.resx">
+      <DependentUpon>Hienthigiaychungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\HienThiHuyen.resx">
+      <DependentUpon>HienThiHuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\hienthiquanlicosochannuoi.resx">
+      <DependentUpon>hienthiquanlicosochannuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Hienthiquanlifile.resx">
+      <DependentUpon>Hienthiquanlifile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Hienthiquanlinhole.resx">
+      <DependentUpon>Hienthiquanlinhole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Hienthiquanlivanban.resx">
+      <DependentUpon>Hienthiquanlivanban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\hienthitochucchungnhan.resx">
+      <DependentUpon>hienthitochucchungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\HienThiXa.resx">
+      <DependentUpon>HienThiXa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Lichsutruycap.resx">
+      <DependentUpon>Lichsutruycap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Manual.resx">
+      <DependentUpon>Manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\quanlicosochannuoi%28guiduc%29.resx">
+      <DependentUpon>quanlicosochannuoi%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\quanlifile%28guiduc%29.resx">
+      <DependentUpon>quanlifile%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\quanlivanban%28guiduc%29.resx">
+      <DependentUpon>quanlivanban%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\quanlyketquachannuoinhole%28guiduc%29.resx">
+      <DependentUpon>quanlyketquachannuoinhole%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\quanlynhole%28guiduc%29.resx">
+      <DependentUpon>quanlynhole%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\showhuyen.resx">
+      <DependentUpon>showhuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\showquyhoac.resx">
+      <DependentUpon>showquyhoac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ShowXa.resx">
+      <DependentUpon>ShowXa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\themcongtrinhcapnuoc.resx">
+      <DependentUpon>themcongtrinhcapnuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ThemHuyen.resx">
+      <DependentUpon>ThemHuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Themquyhoach.resx">
+      <DependentUpon>Themquyhoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Themxa.resx">
+      <DependentUpon>Themxa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\tochucchungnhan.resx">
+      <DependentUpon>tochucchungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\tracuucosochannuoi%28guiduc%29.resx">
+      <DependentUpon>tracuucosochannuoi%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Tracuuvanban%28guiduc%29.resx">
+      <DependentUpon>Tracuuvanban%28guiduc%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ViewUser.resx">
+      <DependentUpon>ViewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinhsuagiaychungnhan.resx">
+      <DependentUpon>chinhsuagiaychungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinhsuaquanlicosochannuoi.resx">
+      <DependentUpon>chinhsuaquanlicosochannuoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinhsuaquyhoachadmin.resx">
+      <DependentUpon>chinhsuaquyhoachadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinhsuathongtinnuocsach.resx">
+      <DependentUpon>chinhsuathongtinnuocsach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinhsuatochucchungnhan.resx">
+      <DependentUpon>chinhsuatochucchungnhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chinsuadieukien.resx">
+      <DependentUpon>chinsuadieukien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistrictForm.resx">
+      <DependentUpon>DistrictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doimk.resx">
+      <DependentUpon>Doimk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doimk2.resx">
+      <DependentUpon>Doimk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doithongtin.resx">
+      <DependentUpon>Doithongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doithongtincoso.resx">
+      <DependentUpon>doithongtincoso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doithongtinhuyen.resx">
+      <DependentUpon>Doithongtinhuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nguoidung.resx">
+      <DependentUpon>nguoidung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaoTk.resx">
+      <DependentUpon>TaoTk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassWordForm.resx">
+      <DependentUpon>ForgotPassWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreshWater.resx">
+      <DependentUpon>FreshWater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreshWatermap.resx">
+      <DependentUpon>FreshWatermap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmadmin.resx">
+      <DependentUpon>frmadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricAccess.resx">
+      <DependentUpon>HistoricAccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HuyenForm.resx">
+      <DependentUpon>HuyenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InforManagerForm.resx">
+      <DependentUpon>InforManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerReportForm.resx">
+      <DependentUpon>ManagerReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFreshWaterForm.resx">
+      <DependentUpon>MenuFreshWaterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuQLQHWater.resx">
+      <DependentUpon>MenuQLQHWater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewInfor.resx">
+      <DependentUpon>NewInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="QuanliqhForm.resx">
+      <DependentUpon>QuanliqhForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quenmatkhau1.resx">
+      <DependentUpon>Quenmatkhau1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quenmatkhau2.resx">
+      <DependentUpon>Quenmatkhau2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassWordForm.resx">
+      <DependentUpon>ResetPassWordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themcongtrinhnuocsachtubando.resx">
+      <DependentUpon>themcongtrinhnuocsachtubando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagerForm.resx">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserReport.rdlc" />
+    <EmbeddedResource Include="VillageForm.resx">
+      <DependentUpon>VillageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Watermap.resx">
+      <DependentUpon>Watermap.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="quanlichannuoi_TemporaryKey.pfx" />
+    <None Include="QuanLyNongThonDataSet.xsc">
+      <DependentUpon>QuanLyNongThonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyNongThonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyNongThonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyNongThonDataSet.xss">
+      <DependentUpon>QuanLyNongThonDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2957.106\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2957.106\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.2957.106\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.2957.106\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+</Project>
